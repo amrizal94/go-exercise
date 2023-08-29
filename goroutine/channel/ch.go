@@ -21,6 +21,26 @@ var berhitung = func(numbers ...int) {
 	}
 }
 
+var cetak = func(kirim chan int) {
+	for {
+		x := <-kirim
+		x++
+		fmt.Println("cetak kirim: ", x)
+		time.Sleep(50 * time.Millisecond)
+		kirim <- x
+	}
+}
+
+var dengar = func(kirim chan int) {
+	for {
+		x := <-kirim
+		x++
+		fmt.Println("dengar kirim: ", x)
+		time.Sleep(50 * time.Millisecond)
+		kirim <- x
+	}
+}
+
 func main() {
 	tick := time.Tick(100 * time.Millisecond)
 	door := time.After(500 * time.Millisecond)
@@ -52,7 +72,10 @@ func main() {
 	case <-time.After(time.Duration(rand.Intn(2)) * time.Second):
 		fmt.Println("timeout")
 	}
-
+	kirim := make(chan int)
+	go cetak(kirim)
+	go dengar(kirim)
+	kirim <- 0
 	for {
 		select {
 		case <-tick:
@@ -65,4 +88,5 @@ func main() {
 			time.Sleep(50 * time.Millisecond)
 		}
 	}
+
 }
