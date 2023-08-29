@@ -44,7 +44,7 @@ func main() {
 
 	go func(numbers ...int) {
 		ch <- numbers[0]
-	}(numbers[rand.Intn(len(numbers)-1)])
+	}(numbers[rand.Intn(len(numbers))])
 
 	select {
 	case v := <-ch:
