@@ -41,4 +41,14 @@ func main() {
 		fmt.Println("ini Hari apa?", seminggu[hari])
 	}
 
+	switch  {
+	case hari <= Selasa:
+		fmt.Printf("Pada hari %v kita belajar nodeJs\n", seminggu[hari])
+	case hari <= Kamis:
+		fmt.Printf("Sekarang hari %v waktunya kita belajar database \n", seminggu[hari])
+	default:
+		fmt.Println("lanjut nanti untuk hari", seminggu[hari])
+
+	}
+
 }
