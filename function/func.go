@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 var sum = func(x ...int) int {
 	if len(x) < 2 {
@@ -27,4 +30,6 @@ var concat = func(s ...string) string {
 func main() {
 	fmt.Println(sum(1, 2, 3, 4))
 	fmt.Println(concat("hello", "world"))
+
+	fmt.Println(concat("1 lusin adalah ", strconv.Itoa(sum(6, 6))))
 }
