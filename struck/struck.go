@@ -34,6 +34,17 @@ var cekBan = func(k motor) (isProposional bool) {
 	return
 }
 
+type speck struct {
+	processor string
+	gpu       string
+}
+
+type hp struct {
+	speck
+	merek string
+	harga int
+}
+
 func main() {
 	byson := motor{
 		cc:    150,
@@ -63,4 +74,21 @@ func main() {
 			fmt.Printf("ganti ban belakang %v dengan lebih besar\n", m.merek)
 		}
 	}
+	hpku := hp{
+		merek: "apple",
+		speck: speck{
+			processor: "M1",
+			gpu:       "7-core",
+		},
+		harga: 1000000,
+	}
+	fmt.Println(hpku)
+	myIpad := struct {
+		version string
+		harga   int
+	}{
+		version: "Ipad Air 5",
+		harga:   5000000,
+	}
+	fmt.Println(myIpad)
 }
