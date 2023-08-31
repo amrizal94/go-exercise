@@ -8,6 +8,12 @@ type persegi struct {
 }
 
 func (p persegi) luas() float32 {
+	p.panjang = 12
+	return p.lebar * p.panjang
+}
+
+func (p *persegi) pointerLuas() float32 {
+	p.panjang = 11
 	return p.lebar * p.panjang
 }
 func main() {
@@ -20,4 +26,10 @@ lebar = %v
 panjang = %v
 maka luasnya adalah %.2f`, kotak.lebar, kotak.panjang, kotak.luas())
 	fmt.Println(s)
+
+	f := fmt.Sprintf(`Diketahui:
+lebar = %v
+panjang = %v
+maka luasnya adalah %.2f`, kotak.lebar, kotak.panjang, kotak.pointerLuas())
+	fmt.Println(f)
 }
