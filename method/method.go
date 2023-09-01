@@ -3,8 +3,7 @@ package main
 import "fmt"
 
 type persegi struct {
-	lebar   float32
-	panjang float32
+	lebar, panjang float32
 }
 
 func (p persegi) luas() float32 {
