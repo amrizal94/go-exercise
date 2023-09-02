@@ -57,6 +57,11 @@ func main() {
 		harga:   5000000,
 	}
 	fmt.Println(myIpad)
+	myIpad.harga = 4000000
+	fmt.Println(myIpad)
+	sonIpad := myIpad
+	sonIpad.version = "Ipad Mini 6"
+	fmt.Println(sonIpad)
 	s := fmt.Sprintf("%.2f", 11211.12112)
 	log.Println(s)
 	f := strconv.Quote(`"Fran & Freddie's Diner	☺"`)

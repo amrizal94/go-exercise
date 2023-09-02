@@ -70,7 +70,7 @@ var hitungKeliling = func(s Shape) float32 {
 
 func main() {
 
-	l := &lingkaran{jari2: 5}
+	l := lingkaran{jari2: 5}
 	fmt.Printf("Diket: jari²: %v cm, maka luas: %v cm² dan keliling lingkaran: %v cm\n", hitungLuas(l), l.luas(), l.keliling())
 
 	pPanjang := persegiPanjang{
