@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "kode_barang": "A01",
+      "nama_barang": "Lemari Pakaian",
+      "harga_satuan_rp": 3450000
+    },
+    {
+      "kode_barang": "A03",
+      "nama_barang": "Meja Makan Bulat",
+      "harga_satuan_rp": 2700000
+    },
+    {
+      "kode_barang": "A04",
+      "nama_barang": "Tempat Tidur King",
+      "harga_satuan_rp": 4375000
+    },
+    {
+      "kode_barang": "A05",
+      "nama_barang": "Etalase Hias",
+      "harga_satuan_rp": 3870000
+    }
+  ]
+}
