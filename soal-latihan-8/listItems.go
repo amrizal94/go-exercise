@@ -9,7 +9,7 @@ import (
 	"github.com/rodaine/table"
 )
 
-func listItems(w chan string) {
+func listItems(products *Products, w chan string) {
 	byteValue, err := os.ReadFile("data.json")
 	if err != nil {
 		log.Println(err)

@@ -20,25 +20,22 @@ type Product struct {
 var headerFmt = color.New(color.FgGreen, color.Underline).SprintfFunc()
 var columnFmt = color.New(color.FgYellow).SprintfFunc()
 var l = en_US.New()
-var products Products
-var inputKodeBarang, namaBarang string
-var hargaBarang int
 
 func main() {
-
-	var namaPembeli string
-	var totalBayar, jumlahBeli, totalPembelian, discount, potonganHarga int
+	var products Products
+	var namaPembeli, inputKodeBarang string
+	var totalBayar, jumlahBeli, totalPembelian, discount, potonganHarga, hargaBarang int
 	wait := make(chan string)
 
 	fmt.Print("Nama Pembeli: ")
 	fmt.Scanln(&namaPembeli)
 	fmt.Println()
-	go listItems(wait)
+	go listItems(&products, wait)
 	<-wait
 	fmt.Print("Kode Barang: ")
 	fmt.Scanln(&inputKodeBarang)
 	fmt.Println()
-	go transaction(wait)
+	go transaction(&hargaBarang, &inputKodeBarang, &products, wait)
 	<-wait
 	fmt.Print("Jumlah Beli: ")
 	fmt.Scanln(&jumlahBeli)
